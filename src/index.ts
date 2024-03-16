@@ -13,7 +13,7 @@ const isDevMode: boolean = process.env.NODE_ENV === 'dev';
 const publicPath: string = process.env.PUBLIC_PATH_NAS || path.join(__dirname, 'public');
 
 app.get('/', (req: express.Request, res: express.Response) => {
-    res.send('It works!');
+    res.send('This is a backend /n it is working');
 });
 
 
