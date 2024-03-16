@@ -1,4 +1,4 @@
-FROM node:18.12
+FROM node:18.12 as build
 
 WORKDIR /work
 
@@ -9,8 +9,14 @@ COPY src tsconfig.json ./
 
 RUN npm run build
 
-COPY /dist ./dist
+FROM node:18.12 as runner
 
+WORKDIR /work
 EXPOSE 3000
+
+COPY package*.json ./
+RUN npm install --production && npm cache clean --force
+
+COPY --from=builder /dist ./dist
 
 CMD ["node", "./dist/index.js"]
