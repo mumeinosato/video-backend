@@ -10,7 +10,7 @@ const app = express();
 app.use(cores());
 
 const isDevMode: boolean = process.env.NODE_ENV === 'dev';
-const publicPath: string = isDevMode ? process.env.PUBLIC_PATH_Y || '' : process.env.PUBLOIC_PATH_NAS || '';
+const publicPath: string = process.env.PUBLIC_PATH_NAS || path.join(__dirname, 'public');
 
 app.get('/', (req: express.Request, res: express.Response) => {
     res.send('It works!');
