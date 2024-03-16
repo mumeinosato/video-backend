@@ -1,6 +1,6 @@
 FROM node:18.12
 
-WORKDIR /usr/src/app
+WORKDIR /work
 
 COPY package*.json ./
 RUN npm install --production
@@ -9,6 +9,8 @@ COPY src tsconfig.json ./
 
 RUN npm run build
 
+COPY /dist ./dist
+
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD ["node", "./dist/index.js"]

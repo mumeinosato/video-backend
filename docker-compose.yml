@@ -8,5 +8,6 @@ services:
       - "3000:3000"
     volumes:
       - .:/usr/src/app
+      - /mnt/nas/share:/mnt/nas/share
     environment:
       - NODE_ENV=development
