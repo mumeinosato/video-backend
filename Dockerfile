@@ -5,10 +5,10 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install --production
 
-COPY . .
-
-EXPOSE 3000
+COPY src tsconfig.json ./
 
 RUN npm run build
+
+EXPOSE 3000
 
 CMD ["npm", "start"]
