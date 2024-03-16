@@ -5,6 +5,8 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install --production
 
+RUN npm install -g ts-node
+
 COPY . .
 
 EXPOSE 3000
