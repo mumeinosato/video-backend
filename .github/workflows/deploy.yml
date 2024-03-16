@@ -15,4 +15,4 @@ jobs:
           username: ${{secrets.SSH_USERNAME}}
           private_key: ${{ secrets.SK }}
           port: ${{secrets.SSH_PORT}}
-          commands: 
+          commands: sh run.sh
