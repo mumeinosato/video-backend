@@ -8,13 +8,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - name: Install SSH Key for Deploy
-        uses: appleboy/ssh-action@master
+        uses: npgy/cloudflared-ssh-action@v2.0
         with:
-          key: ${{ secrets.SK }}
           host: ${{secrets.SSH_HOST}}
           username: ${{secrets.SSH_USERNAME}}
+          private_key: ${{ secrets.SK }}
           port: ${{secrets.SSH_PORT}}
-          script: |
-            sh run.sh  
+          commands: sh run.sh
