@@ -17,6 +17,6 @@ EXPOSE 3000
 COPY package*.json ./
 RUN npm install --production && npm cache clean --force
 
-COPY --from=builder /dist ./dist
+COPY --from=build /dist ./dist
 
 CMD ["node", "./dist/index.js"]
