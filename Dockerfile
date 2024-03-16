@@ -14,6 +14,9 @@ FROM node:18.12 as runner
 WORKDIR /work
 EXPOSE 3000
 
+ENV NODE_ENV dev
+ENV PUBLIC_PATH_NAS /mnt/nas/share/
+
 COPY package*.json ./
 RUN npm install --production && npm cache clean --force
 

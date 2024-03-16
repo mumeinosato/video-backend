@@ -28,5 +28,6 @@ coverage
 *.sw?
 .env
 *.js
+Dockerfile
 
 *.tsbuildinfo
