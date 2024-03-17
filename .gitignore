@@ -29,5 +29,6 @@ coverage
 .env
 *.js
 Dockerfile
+dev-file
 
 *.tsbuildinfo
